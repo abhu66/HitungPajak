@@ -14,11 +14,13 @@ import javax.swing.JOptionPane;
 
 
 import java.io.File;
+import java.io.IOException;
 
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import jxl.Sheet;
 import jxl.Workbook;
+import jxl.read.biff.BiffException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
 /**
@@ -76,7 +78,7 @@ public class Form_utama extends javax.swing.JFrame {
             }
  
             jTable1.setModel(model);
-        } catch (Exception e) {
+        } catch (IOException | BiffException e) {
             JOptionPane.showMessageDialog(null, "Error: " + e);
         }
  
